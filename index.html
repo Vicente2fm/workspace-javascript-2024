@@ -68,16 +68,10 @@
 </script>
             <p> Write a table to the page </p>
 <script>
-    document.write("<table border=\"1\">");
-        for (let i = 1; i <= 3; i++) {  
-        document.write("<tr>"); 
-        for (let j = 1; j <= 3; j++) { 
-            document.write("<td> Row " + i + ", Col " + j + "</td>");  
-        }
-        document.write("</tr>"); 
-    }
-
-    document.write("</table>"); 
+   document.write("<table>");
+   document.write("<tr><td>1</td><td>2</td></tr>");
+   document.write("<tr><td>3</td><td>4</td></tr>");
+   document.write("</table>");
 </script>
         </div>
 
@@ -128,18 +122,18 @@
             <script>
                 function calculate() {
              //get the vallue from the form and add them up
-             const input1 = document.getElementsByName('num1');
+             const input1 = document.getElementsByName('num1')[0];
              console.log("get the first input" + input1.value);
              
              var a = parseFloat(input1.value);
 
-             const input2 = document.getElementsByName('num2');
+             const input2 = document.getElementsByName('num2')[0];
              console.log("get the second input" + input2.value);
              
              var b = parseFloat(input2.value);
 
              var c = a + b;
- const resultL = document.getElementById("result");
+            const resultL = document.getElementById("result");
                  resultL.textContent= "" + c;
                 }
             </script>
@@ -159,7 +153,7 @@
                     </label>
                 </p>
 
-                <p id="message">
+                <p id="checkmessage">
 
                 </p>
 
@@ -172,10 +166,17 @@
             <script>
                 // Event handler 
                 function welcome(){
-                        alert("thank you");
+
+                       // alert("thank you");
+                       const namebox = document.getElementById('cName');
+                       //check and call backend  database
+                       var newmessage = "welcome " +  namebox.value + ",you are new customer ";
+                        // put the message back
+                        document.getElementById('checkmessage').textContent = newmessage;
+
                 }
                 // binding-- register the event 
-                const nameE = document.getElementById="cName";
+                const nameE = document.getElementById("cName");
                 nameE.addEventListener('blur',welcome);
             </script>
         </div>
@@ -183,9 +184,22 @@
         <div class="practice">
             <h1> Practice - Calculate Square</h1>
             Calculating Square:
-            <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
-
+            <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
+            <label id="squareresult"> ? </label>
+            <script>
+                function dosquare(){
+                //get the number 
+                const square = document.getElementById("squarenum");
+                var number = parseInt(squareE.value);
+                console.log("the square number is "+ number);
+                // do square
+                var newnum = number * number;
+                // put it back
+                document.getElementById("squareresult").textContent = " " + newnum;
+                }
+                const squareE = document.getElementById("squarenum");
+                squareE.addEventListener('change',dosquare);
+            </script>
         </div>
 
         <div class="practice">
@@ -198,9 +212,17 @@
 
             <input type="button" id="tryit" value="Click and Display"> 
 
-            <div id="message"> 
+            <div id="htmlcode"> 
             </div>
+            <script>
+                function convertHTML(){
+                    const codeE = document.getElementById('code');
+                    const htmlcodeE = document.getElementById('htmlcode');
 
+                    htmlcodeE.innerHTML = codeE.textContent;
+                }
+                document.getElementById('tryit'). addEventListener('click',convertHTML);
+            </script>
 
         </div>
 
