@@ -218,8 +218,8 @@
                 function convertHTML(){
                     const codeE = document.getElementById('code');
                     const htmlcodeE = document.getElementById('htmlcode');
-
-                    htmlcodeE.innerHTML = codeE.textContent;
+                    console.log(codeE.value);
+                    htmlcodeE.innerHTML = codeE.value;
                 }
                 document.getElementById('tryit'). addEventListener('click',convertHTML);
             </script>
@@ -245,9 +245,38 @@
             </p>
 
             <script type="text/javascript">
+                //get element
+                var year = document.getElementById('year');
+                var condition= document.getElementById('condition');
+                // add evtns
+                document.getElementById('year').addEventListener('change',getprice,false);
+                condition.addEventListener('change',getprice,false);
 
-
-
+                // event handler 
+                function getprice(){
+                    console.log(year.value);
+                    console.log(year.selectedIndex);
+           ; // Default price if no conditions match
+        }
+        if (year.value == "2003" && condition.value == "Fair") {
+                price = 2000;
+            } else if (year.value == "2004" && condition.value == "Fair") {
+                price = 3000;
+            } else if (year.value == "2003" && condition.value == "Good") {
+                price = 4000;
+            } else if (year.value == "2004" && condition.value == "Good") {
+                price = 5000;
+            } else {
+                price = 1000; // Default price if no conditions match
+            }
+                    // finish the if statement
+                    document.getElementById("price").innerHTML="the price is <b>" + price + "</b>";
+                  
+                
+                // add evtns
+                year.addEventListener('change',getprice,false);
+                condition.addEventListener('change',getprice,false);
+        
             </script>
 
         </div>
@@ -257,7 +286,28 @@
             <p> Choose your favorite theme(warm, cool, hot)
                 <input type="text" id="theme">
             </p>
+            <script>
+                // get element and add event listener
+                 var theme = document.getElementById('theme');
+                 theme.addEventListener('blur', getthem,false);
+                 //actopm
+                 function getthem(){
+                    var themevalue = document.getElementById('theme').value;
+                    switch(themevalue){
+                        case "warm": 
+                        document.body.style.backgroundColor = "yellow";
+                        break;
+                        case "hot":
+                        document.body.style.backgroundColor = "red";
+                        break;
+                        case "cool":
+                        document.body.style.backgroundColor = "blue";
+                        break;
+                        default:alert("please enter a valid theme");
 
+                    }
+                 }
+            </script>
         </div>
 
 
