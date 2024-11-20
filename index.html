@@ -61,7 +61,7 @@
             <h1>JavaScript Escape Sequence</h1>
             <p>Write an image to the page:</p>
             <script>
-                // Use escape sequences for attributes
+                
                 document.write("img\backPara.png");
             </script>
     
@@ -608,23 +608,22 @@
                 imglist[0].setAttribute('class', 'img-container'); // show the first image
                 var index = 0; // current image
                 
-                // Event - change to the next picture
+           
                 function changepic() {
                     // Hide the current image
                     imglist[index].setAttribute('class', 'img-container-hide');
                     
-                    // Move to the next image
+                 
                     index++;
-                    index = index % imglist.length; // Ensure the index wraps around when it exceeds the number of images
+                    index = index % imglist.length; 
                     
                     // Show the next image
                     imglist[index].setAttribute('class', 'img-container');
                 }
                 
-                // Bind the event to change image every 3 seconds
-                setInterval(changepic, 3000);
                 
-                // Allow clicking on the image to manually change the picture
+                setInterval(changepic, 3000);
+        
                 imglist[0].addEventListener('click', changepic);
             </script>
         </div>
