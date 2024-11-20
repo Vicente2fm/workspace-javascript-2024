@@ -5,13 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
         const n = parseInt(inputNumber.value);
 
-        // Validate the input
         if (isNaN(n) || n < 1 || n > 10) {
             alert("Please enter a number between 1 and 10.");
             return;
         }
 
-        // Generate the drill
         let drillHTML = "";
         for (let i = 1; i <= 10; i++) {
             drillHTML += `
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         drillHTML += `<button id="checkAnswers">Check Answers</button>`;
         document.getElementById('output').innerHTML = drillHTML;
 
-        // Add event listener to check answers
         document.getElementById('checkAnswers').addEventListener('click', function () {
             for (let i = 1; i <= 10; i++) {
                 const userAnswer = parseInt(document.getElementById(`answer${i}`).value);

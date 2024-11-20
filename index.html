@@ -67,7 +67,7 @@
     
             <p>Write a table to the page:</p>
             <script>
-                // Create a table using escape sequences
+             
                 document.write("<table border=\"1\" style=\"border-collapse: collapse;\">");
                 document.write("<tr><th>Header 1</th><th>Header 2</th></tr>");
                 document.write("<tr><td>Row 1, Col 1</td><td>Row 1, Col 2</td></tr>");
@@ -89,24 +89,24 @@
             <p id="urlDisplay"></p>
     
             <script>
-                // Show an alert
+          
                 document.getElementById("alertButton").addEventListener("click", function () {
                     window.alert("This is a pop-up alert window!");
                 });
     
-                // Open Google in a new tab
+           
                 document.getElementById("openButton").addEventListener("click", function () {
                     window.open("https://www.google.com", "_blank");
                 });
     
-                // Display the current URL
+              
                 document.getElementById("locationButton").addEventListener("click", function () {
                     const currentUrl = window.location.href;
                     console.log("Current URL:", currentUrl);
                     document.getElementById("urlDisplay").textContent = "Current URL: " + currentUrl;
                 });
     
-                // Redirect to Google
+                
                 document.getElementById("redirectButton").addEventListener("click", function () {
                     window.location.assign("https://www.google.com");
                 });
@@ -130,19 +130,16 @@
             <p>Please write JavaScript code to change the content of each paragraph.</p>
     
             <script>
-                // Change the content of the first paragraph
+          
                 const pOne = document.getElementById("p1");
                 pOne.innerHTML = "<b>First Paragraph - Bold Elements</b>";
     
-                // Change the content of the second paragraph
                 const pTwo = document.getElementById("p2");
                 pTwo.innerHTML = "<i>Second Paragraph - Italicized Elements</i>";
     
-                // Change the content of the third paragraph
                 const pThree = document.getElementById("p3");
                 pThree.innerHTML = "<u>Third Paragraph - Underlined Elements</u>";
     
-                // Using console.log to show the updated content
                 console.log("Updated Paragraph 1:", pOne.innerHTML);
                 console.log("Updated Paragraph 2:", pTwo.innerHTML);
                 console.log("Updated Paragraph 3:", pThree.innerHTML);
@@ -163,18 +160,18 @@
     
             <script>
                 function calculate() {
-                    // Get the values from the form inputs
+                 
                     const input1 = document.getElementsByName('num1')[0];
                     const input2 = document.getElementsByName('num2')[0];
     
                     console.log("First input value: " + input1.value);
                     console.log("Second input value: " + input2.value);
     
-                    // Convert input values to numbers
+          
                     const a = parseFloat(input1.value) || 0; // Default to 0 if input is empty
                     const b = parseFloat(input2.value) || 0; // Default to 0 if input is empty
     
-                    // Perform addition
+                   
                     const c = a + b;
     
                     // Display the result
@@ -310,7 +307,7 @@
                     const condition = document.getElementById('condition').value; // Get selected condition
                     let price = 0;
         
-                    // Decision logic
+                
                     if (year === "2003" && condition === "Fair") {
                         price = 2000;
                     } else if (year === "2003" && condition === "Good") {
@@ -321,11 +318,10 @@
                         price = 3500;
                     }
         
-                    // Update the price in the DOM
+                  
                     document.getElementById("price").innerHTML = `Price: <b>$${price}</b>`;
                 }
         
-                // Add event listeners
                 document.getElementById("year").addEventListener('change', getPrice);
                 document.getElementById("condition").addEventListener('change', getPrice);
             </script>
@@ -337,10 +333,10 @@
                 <input type="text" id="theme">
             </p>
             <script>
-                // get element and add event listener
+ 
                 var theme = document.getElementById('theme');
                 theme.addEventListener('blur',gettheme,false);
-                // action 
+           
                 function gettheme(){
                     var themevalue = document.getElementById('theme').value;
                     switch (themevalue){
@@ -395,7 +391,7 @@
         
                     console.log("The coverage is " + coverage + "  age " + ageindex);
         
-                    // Get the age factor using switch
+                
                     var agefactor = 0; 
                     switch (ageindex) {
                         case 0: agefactor = 0.08; break; // under 30
@@ -408,11 +404,10 @@
                     // Calculation
                     var premium = base + parseFloat(coverage) / 1000 * agefactor;
         
-                    // Display in paragraph #premiumresult
                     document.querySelector('#premiumresult').textContent = `Your premium is $${premium.toFixed(2)}`;
                 }
         
-                // Get the button element and add event listener
+          
                 var bE = document.querySelector('input[value="Check Premium"]');
                 bE.addEventListener('click', getpremium, false);
             </script>
@@ -436,13 +431,12 @@
             // Get the value of N
             var N = document.getElementById('inputnumber1').value;
 
-            // Validate input
             if (N < 1 || N > 10) {
                 alert("Please enter a number between 1 and 10");
                 return;
             }
 
-            // Initialize output list
+            
             var outlist = "<ul>";
             
             // For loop to calculate squares
@@ -451,10 +445,9 @@
                 outlist += "<li>" + i + "^2 = " + square + "</li>";
             }
 
-            // Close the list
             outlist += "</ul>";
 
-            // Display the result in the 'squarelist' element
+      
             document.getElementById('squarelist').innerHTML = outlist;
         }
     </script>
@@ -474,19 +467,19 @@
     <div id="output"></div>
 
     <script>
-        // Add event listener to the button
+
         document.getElementById('generateTable').addEventListener('click', function () {
-            // Get the input value
+          
             const input = document.getElementById('inputnumber2');
             const n = parseInt(input.value);
 
-            // Validate the input
+         
             if (isNaN(n) || n < 1 || n > 10) {
                 document.getElementById('output').innerHTML = "<p style='color: red;'>Please enter a number between 1 and 10.</p>";
                 return;
             }
 
-            // Generate the multiplication table
+       
             let tableHTML = "<table border='1' style='border-collapse: collapse; text-align: center;'>";
             tableHTML += "<tr><th>Number</th><th>Result</th></tr>";
             for (let i = 1; i <= 10; i++) {
@@ -508,10 +501,10 @@
     <p>
         <input type="button" value="Click for multiplication drill">
     </p>
-    <!-- Output container -->
+    
     <div id="output"></div>
 
-    <!-- Link the JavaScript file -->
+    
     <script src="mathdrill.js"></script>
 </div>
 
@@ -522,7 +515,7 @@
             <p>Target: Generate a simple substract and add problems using JavaScript and then check the answers</p>
             <a href="quiz1.html">Do your practice in quiz1.html</a>
             <script>
-                    //try Math.random
+                    
                     for (let i = 0; i<4;i++){
                         var num = Math.floor(Math.random()*6)+1;
                         alert(num);
